@@ -12,4 +12,6 @@ public class TalonSubsystem extends SubsystemBase {
   public final TalonFX one = new TalonFX(7);
   public final TalonFX two = new TalonFX(8);
   public final TalonFX three = new TalonFX(9);
+  public final TalonFX four = new TalonFX(10);
+  public final TalonFX five = new TalonFX(11);
 }

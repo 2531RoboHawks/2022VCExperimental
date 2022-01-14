@@ -4,7 +4,7 @@
 
 package frc.robot;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
+import java.util.Arrays;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -84,7 +84,11 @@ public class Robot extends TimedRobot {
     }
     new DriveCommand().schedule();
 
-    new OrchestraCommand("alive.chrp").schedule();
+    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.one)).schedule();
+    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.two)).schedule();
+    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.three)).schedule();
+    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.four)).schedule();
+    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.five)).schedule();
     // RobotContainer.talonSubsystem.talon.set(ControlMode.PercentOutput, 1);
   }
 

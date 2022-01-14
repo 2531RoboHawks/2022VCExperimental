@@ -5,23 +5,24 @@
 package frc.robot.commands;
 
 import java.io.File;
+import java.util.List;
 
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.music.Orchestra;
 
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
 
 public class OrchestraCommand extends CommandBase {
   private Orchestra orchestra;
 
-  public OrchestraCommand(String name) {
+  public OrchestraCommand(String name, List<TalonFX> talons) {
     orchestra = new Orchestra();
     String path = new File(Filesystem.getDeployDirectory(), name).toString();
     orchestra.loadMusic(path);
-    orchestra.addInstrument(RobotContainer.talonSubsystem.one);
-    orchestra.addInstrument(RobotContainer.talonSubsystem.two);
-    orchestra.addInstrument(RobotContainer.talonSubsystem.three);
+    for (TalonFX talon : talons) {
+      orchestra.addInstrument(talon);
+    }
   }
 
   // Called when the command is initially scheduled.
