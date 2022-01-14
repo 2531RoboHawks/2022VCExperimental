@@ -9,5 +9,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class TalonSubsystem extends SubsystemBase {
-  public final TalonFX talon = new TalonFX(0);
+  public final TalonFX one = new TalonFX(7);
+  public final TalonFX two = new TalonFX(8);
+  public final TalonFX three = new TalonFX(9);
 }

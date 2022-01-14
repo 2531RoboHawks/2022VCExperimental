@@ -19,7 +19,9 @@ public class OrchestraCommand extends CommandBase {
     orchestra = new Orchestra();
     String path = new File(Filesystem.getDeployDirectory(), name).toString();
     orchestra.loadMusic(path);
-    orchestra.addInstrument(RobotContainer.talonSubsystem.talon);
+    orchestra.addInstrument(RobotContainer.talonSubsystem.one);
+    orchestra.addInstrument(RobotContainer.talonSubsystem.two);
+    orchestra.addInstrument(RobotContainer.talonSubsystem.three);
   }
 
   // Called when the command is initially scheduled.

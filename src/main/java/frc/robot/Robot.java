@@ -84,8 +84,8 @@ public class Robot extends TimedRobot {
     }
     new DriveCommand().schedule();
 
-    // new OrchestraCommand("mega.chrp").schedule();
-    RobotContainer.talonSubsystem.talon.set(ControlMode.PercentOutput, 1);
+    new OrchestraCommand("alive.chrp").schedule();
+    // RobotContainer.talonSubsystem.talon.set(ControlMode.PercentOutput, 1);
   }
 
   /** This function is called periodically during operator control. */
