@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.GyroscopeSubsystem;
 import frc.robot.subsystems.NavXGyroSubsystem;
@@ -26,8 +25,6 @@ public class RobotContainer {
   public static final GyroscopeSubsystem m_gyroscopeSubsystem = new GyroscopeSubsystem();
   public static final NavXGyroSubsystem m_navxgyrosubsystem = new NavXGyroSubsystem();
   public static final TalonSubsystem talonSubsystem = new TalonSubsystem();
-
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_driveSubsystem);
 
   public static final Joystick leftJoy = new Joystick(0);
   public static final Joystick rightJoy = new Joystick(0);
@@ -55,7 +52,6 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return null;
   }
 }
