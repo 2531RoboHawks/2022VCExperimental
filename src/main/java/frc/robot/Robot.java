@@ -6,6 +6,8 @@ package frc.robot;
 
 import java.util.Arrays;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -84,12 +86,19 @@ public class Robot extends TimedRobot {
     }
     new DriveCommand().schedule();
 
-    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.one)).schedule();
-    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.two)).schedule();
-    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.three)).schedule();
-    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.four)).schedule();
-    new OrchestraCommand("mega.chrp", Arrays.asList(RobotContainer.talonSubsystem.five)).schedule();
-    // RobotContainer.talonSubsystem.talon.set(ControlMode.PercentOutput, 1);
+    // new OrchestraCommand("gourmeg.chrp", Arrays.asList(
+    //   RobotContainer.talonSubsystem.one
+    // )).schedule();
+    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.one)).schedule();
+    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.two)).schedule();
+    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.three)).schedule();
+    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.four)).schedule();
+    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.five)).schedule();
+    // RobotContainer.talonSubsystem.one.set(ControlMode.PercentOutput, 1);
+    // RobotContainer.talonSubsystem.two.set(ControlMode.PercentOutput, 1);
+    // RobotContainer.talonSubsystem.three.set(ControlMode.PercentOutput, 1);
+    // RobotContainer.talonSubsystem.four.set(ControlMode.PercentOutput, 1);
+    // RobotContainer.talonSubsystem.five.set(ControlMode.PercentOutput, 1);
   }
 
   /** This function is called periodically during operator control. */
