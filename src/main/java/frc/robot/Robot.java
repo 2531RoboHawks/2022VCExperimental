@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.OrchestraCommand;
+import frc.robot.commands.ShootCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -84,16 +85,19 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-    new DriveCommand().schedule();
+
+    // new DriveCommand().schedule();
+
+    new ShootCommand(RobotContainer.shootSubsystem).schedule();
 
     // new OrchestraCommand("gourmeg.chrp", Arrays.asList(
     //   RobotContainer.talonSubsystem.one
     // )).schedule();
-    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.one)).schedule();
-    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.two)).schedule();
-    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.three)).schedule();
-    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.four)).schedule();
-    new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.five)).schedule();
+    // new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.one)).schedule();
+    // new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.two)).schedule();
+    // new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.three)).schedule();
+    // new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.four)).schedule();
+    // new OrchestraCommand("n.chrp", Arrays.asList(RobotContainer.talonSubsystem.five)).schedule();
     // RobotContainer.talonSubsystem.one.set(ControlMode.PercentOutput, 1);
     // RobotContainer.talonSubsystem.two.set(ControlMode.PercentOutput, 1);
     // RobotContainer.talonSubsystem.three.set(ControlMode.PercentOutput, 1);
