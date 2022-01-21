@@ -13,6 +13,8 @@ import frc.robot.subsystems.GyroscopeSubsystem;
 import frc.robot.subsystems.NavXGyroSubsystem;
 import frc.robot.subsystems.ShootSubsystem;
 import frc.robot.subsystems.TalonSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
+import frc.robot.commands.ShootCommand;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -27,10 +29,13 @@ public class RobotContainer {
   public static final NavXGyroSubsystem m_navxgyrosubsystem = new NavXGyroSubsystem();
   public static final TalonSubsystem talonSubsystem = new TalonSubsystem();
   public static final ShootSubsystem shootSubsystem = new ShootSubsystem();
+  public static final VisionSubsystem visionSubsystem = new VisionSubsystem();
 
   public static final Joystick leftJoy = new Joystick(0);
   public static final Joystick rightJoy = new Joystick(0);
   public static final Joystick gamepad = new Joystick(0);
+
+  public static final Command shootCommand = new ShootCommand(shootSubsystem);
 
   public static SendableChooser<String> controlChooser = new SendableChooser<>();
 

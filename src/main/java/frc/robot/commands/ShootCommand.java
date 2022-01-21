@@ -17,17 +17,10 @@ public class ShootCommand extends CommandBase {
     addRequirements(shoot);
     SmartDashboard.putNumber("Power", 0.0);
   }
-  
-  @Override
-  public void initialize() {
-  }
 
   @Override
   public void execute() {
-    // shootSubsystem.shoot(-SmartDashboard.getNumber("Power", 0.0));
-    double power = RobotContainer.leftJoy.getZ();
-    SmartDashboard.putNumber("Power", power);
-    shootSubsystem.shoot(power);
+    shootSubsystem.shoot(SmartDashboard.getNumber("Power", 0.0));
   }
 
   @Override

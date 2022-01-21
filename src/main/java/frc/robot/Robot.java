@@ -36,6 +36,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
 
+    RobotContainer.controlChooser.addOption("None", "none");
     RobotContainer.controlChooser.addOption("Airplane tank", "airplane-tank");
     RobotContainer.controlChooser.addOption("Airplane arcade", "airplane-arcade");
     RobotContainer.controlChooser.addOption("Joystick tank", "joystick-tank");
@@ -88,7 +89,7 @@ public class Robot extends TimedRobot {
 
     // new DriveCommand().schedule();
 
-    new ShootCommand(RobotContainer.shootSubsystem).schedule();
+    RobotContainer.shootCommand.schedule();
 
     // new OrchestraCommand("gourmeg.chrp", Arrays.asList(
     //   RobotContainer.talonSubsystem.one
