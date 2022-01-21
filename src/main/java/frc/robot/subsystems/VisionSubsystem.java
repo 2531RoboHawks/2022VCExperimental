@@ -54,8 +54,7 @@ public class VisionSubsystem extends SubsystemBase {
                         hue > 190 &&
                         hue < 240 &&
                         saturation < 1 &&
-                        brightness < 0.8 &&
-                        brightness > 0.2
+                        brightness < 0.8
                     ) {
                         output.put(row, col, blue, green, red);
                     } else {
