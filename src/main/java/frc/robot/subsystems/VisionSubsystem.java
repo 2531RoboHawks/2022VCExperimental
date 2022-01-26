@@ -4,9 +4,9 @@ import java.awt.Color;
 
 import org.opencv.core.Mat;
 
-import edu.wpi.first.cscore.CvSink;
-import edu.wpi.first.cscore.CvSource;
-import edu.wpi.first.cscore.UsbCamera;
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -21,12 +21,12 @@ public class VisionSubsystem extends SubsystemBase {
         int width = 120;
         int height = 120;
 
-        UsbCamera camera = CameraServer.startAutomaticCapture(0);
+        UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
         camera.setResolution(width, height);
         camera.setFPS(30);
 
-        CvSink cvSink = CameraServer.getVideo(camera);
-        CvSource outputStream = CameraServer.putVideo("Test 123", width, height);
+        CvSink cvSink = CameraServer.getInstance().getVideo(camera);
+        CvSource outputStream = CameraServer.getInstance().putVideo("Test 123", width, height);
 
         Mat source = new Mat();
         while (!Thread.interrupted()) {
