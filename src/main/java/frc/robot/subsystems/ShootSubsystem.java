@@ -7,10 +7,11 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShootSubsystem extends SubsystemBase {
-  private TalonSRX talon = new TalonSRX(5);
+  private TalonSRX talon = new TalonSRX(11);
 
   public void shoot(double power) {
     talon.set(ControlMode.PercentOutput, power);
@@ -18,5 +19,11 @@ public class ShootSubsystem extends SubsystemBase {
 
   public void stop() {
     shoot(0);
+  }
+
+  @Override
+  public void periodic() {
+    double rpm = talon.getSelectedSensorVelocity() / 2048.0 * 10.0 * 60.0;
+    SmartDashboard.putNumber("RPM", rpm);
   }
 }
