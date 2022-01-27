@@ -12,7 +12,6 @@ import frc.robot.subsystems.ShootSubsystem;
 
 public class ShootCommand extends CommandBase {
   private ShootSubsystem shootSubsystem;
-  private PIDController pidController = new PIDController(0.1, 0.01, 0.1);
 
   public ShootCommand(ShootSubsystem shoot) {
     this.shootSubsystem = shoot;
@@ -23,7 +22,6 @@ public class ShootCommand extends CommandBase {
   @Override
   public void execute() {
     shootSubsystem.shoot(SmartDashboard.getNumber("Power", 0.0));
-    shootSubsystem.getInfo();
   }
 
   @Override
