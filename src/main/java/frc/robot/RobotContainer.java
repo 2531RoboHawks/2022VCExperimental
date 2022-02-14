@@ -29,7 +29,7 @@ public class RobotContainer {
   public static final NavXGyroSubsystem m_navxgyrosubsystem = new NavXGyroSubsystem();
   public static final TalonSubsystem talonSubsystem = new TalonSubsystem();
   public static final ShootSubsystem shootSubsystem = new ShootSubsystem();
-  public static final VisionSubsystem visionSubsystem = new VisionSubsystem();
+  // public static final VisionSubsystem visionSubsystem = new VisionSubsystem();
 
   public static final Joystick leftJoy = new Joystick(0);
   public static final Joystick rightJoy = new Joystick(0);
